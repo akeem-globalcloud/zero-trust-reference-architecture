@@ -1,52 +1,31 @@
-# Contributor Covenant Code of Conduct
+# Code of Conduct
 
-## Our Pledge
+## Purpose
 
-We as members, contributors, and maintainers pledge to make participation in our
-community a respectful, harassment-free experience for everyone, regardless of
-age, body size, visible or invisible disability, ethnicity, sex characteristics,
-gender identity and expression, level of experience, education, socioeconomic
-status, nationality, personal appearance, race, religion, or sexual identity and
-orientation.
+This repository is maintained as a professional reference architecture and learning resource for cloud security, Zero Trust, and Infrastructure as Code (IaC).
 
-We pledge to act and interact in ways that contribute to an open, welcoming,
-diverse, inclusive, and healthy community.
+## Expected Behavior
 
----
+Contributors and participants are expected to:
 
-## Our Standards
+* Communicate respectfully and professionally.
+* Provide constructive feedback.
+* Focus discussions on technical topics and project improvement.
+* Respect differing opinions and experiences.
 
-Examples of behavior that contributes to a positive environment include:
+## Unacceptable Behavior
 
-- Demonstrating empathy and kindness.
-- Respecting differing opinions and experiences.
-- Giving and gracefully accepting constructive feedback.
-- Taking responsibility for mistakes and learning from them.
-- Focusing on what is best for the community.
+The following behaviors are not acceptable:
 
-Examples of unacceptable behavior include:
+* Harassment or discrimination of any kind.
+* Personal attacks or abusive language.
+* Spam or intentionally disruptive behavior.
+* Sharing confidential or proprietary information without authorization.
 
-- Harassment or discriminatory language.
-- Personal attacks or insults.
-- Publishing private information without permission.
-- Any conduct that would be considered inappropriate in a professional setting.
+## Reporting Issues
 
----
+If you encounter behavior that violates this Code of Conduct, please open a GitHub issue or contact the repository maintainer privately.
 
-## Enforcement
+## Maintainer
 
-Project maintainers are responsible for clarifying and enforcing this Code of Conduct and may remove, edit, or reject contributions that violate these standards.
-
----
-
-## Scope
-
-This Code of Conduct applies to all project spaces, including GitHub Issues, Pull Requests, Discussions, and other project communication channels.
-
----
-
-## Attribution
-
-This Code of Conduct is adapted from the Contributor Covenant, version 2.1.
-
-https://www.contributor-covenant.org/version/2/1/code_of_conduct/
+This project is currently maintained by A. O. Ogundipe. The maintainer reserves the right to moderate discussions and contributions to keep the repository professional, respectful, and focused on its objectives.
