@@ -51,3 +51,18 @@ This project follows the principles of **Keep a Changelog** and **Semantic Versi
 | Major (X.0.0) | Breaking architectural changes |
 | Minor (0.X.0) | New features or implementation stories |
 | Patch (0.0.X) | Bug fixes, documentation updates, and minor improvements |
+
+---
+
+## [0.2.0] - Enterprise Identity Foundation
+
+### Added
+
+- Zero Trust architecture documentation
+- Enterprise identity reference architecture
+- AWS identity implementation guide
+- Reusable Terraform identity module
+- Example deployment
+- Industry implementation profiles
+- Enterprise control catalog
+- Cross-framework mappings
