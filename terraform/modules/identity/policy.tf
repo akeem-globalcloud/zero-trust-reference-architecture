@@ -1,6 +1,6 @@
 resource "aws_iam_policy" "this" {
 
-  name        = local.policy_name
+  name = local.policy_name
 
   description = "Identity module policy"
 

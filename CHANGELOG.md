@@ -54,7 +54,7 @@ This project follows the principles of **Keep a Changelog** and **Semantic Versi
 
 ---
 
-## [0.2.0] - Enterprise Identity Foundation
+## [0.2.0] - Enterprise Identity & Access Management
 
 ### Added
 
@@ -66,3 +66,36 @@ This project follows the principles of **Keep a Changelog** and **Semantic Versi
 - Industry implementation profiles
 - Enterprise control catalog
 - Cross-framework mappings
+
+---
+
+## [0.3.0] - 2026-07-28
+
+### Added
+
+#### Enterprise Network & Connectivity (ZT-003)
+
+- Enterprise VPC module
+- Multi-AZ public, private, and database subnets
+- Internet Gateway
+- NAT Gateway
+- Route Tables
+- Security Groups
+- Network ACLs
+- Amazon S3 Gateway Endpoint
+- AWS Transit Gateway
+- Reusable Terraform module
+- Network Connectivity example deployment
+- Architecture documentation
+- ADR-002 Network Architecture
+- Module documentation
+- Example documentation
+
+### Changed
+
+- Added `network` Terraform module.
+- Added `network-connectivity` deployment example.
+- Updated repository structure and documentation.
+
+---
+

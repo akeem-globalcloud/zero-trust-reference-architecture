@@ -33,7 +33,7 @@ data "aws_iam_policy_document" "base_policy" {
 
   statement {
 
-    sid    = "CloudWatchLogs"
+    sid = "CloudWatchLogs"
 
     effect = "Allow"
 
