@@ -1,8 +1,8 @@
-# Enterprise Logging & Monitoring Deployment Example
+# Enterprise Logging & Monitoring
 
 ## Overview
 
-This deployment example demonstrates how to deploy the **Enterprise Logging & Monitoring** module within the **Zero Trust Reference Architecture**. The implementation provisions AWS-native logging, monitoring, configuration management, and security services using reusable Terraform modules to establish a centralized observability platform for enterprise cloud environments.
+This project demonstrates the deployment of **Enterprise Logging & Monitoring** module within the **Zero Trust Reference Architecture**. The implementation provisions AWS-native logging, monitoring, configuration management, and security services using reusable Terraform modules to establish a centralized observability platform for enterprise cloud environments.
 
 The deployment provides continuous visibility into AWS infrastructure by collecting audit logs, monitoring operational metrics, detecting security events, and generating automated alerts. It serves as a production-ready reference implementation for organizations adopting Zero Trust security principles and Infrastructure as Code (IaC) best practices.
 

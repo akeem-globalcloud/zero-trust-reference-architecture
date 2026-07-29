@@ -6,7 +6,7 @@
 
 ## Overview
 
-The **Zero Trust Reference Architecture** project provides a practical, implementation-focused framework for designing, securing, and operating cloud-native and hybrid environments using Zero Trust principles.
+The **Zero Trust Reference Architecture** project provides a practical implementation-focused framework for designing, securing, and operating cloud-native and hybrid environments using Zero Trust principles.
 
 This repository combines architecture guidance, infrastructure-as-code, security automation, policy definitions, detection engineering, and implementation documentation into a reusable reference that organizations can adapt to their own environments.
 
