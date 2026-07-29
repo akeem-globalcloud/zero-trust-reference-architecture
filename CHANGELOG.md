@@ -99,3 +99,58 @@ This project follows the principles of **Keep a Changelog** and **Semantic Versi
 
 ---
 
+## [v0.4.0] - Enterprise Logging & Monitoring
+
+### Added
+
+#### Terraform Module
+
+- Added reusable **Enterprise Logging & Monitoring** Terraform module.
+- Added AWS CloudTrail configuration.
+- Added Amazon CloudWatch Log Groups.
+- Added CloudWatch Metrics.
+- Added CloudWatch Dashboard.
+- Added CloudWatch Alarms.
+- Added Amazon SNS notification integration.
+- Added AWS Config Recorder.
+- Added AWS Security Hub integration.
+- Added configurable variables and outputs.
+- Added enterprise tagging support.
+
+### Deployment Example
+
+- Added complete deployment example for Enterprise Logging & Monitoring.
+- Added example Terraform variables.
+- Added deployment outputs.
+- Added implementation README.
+
+### Documentation
+
+- Added Story ZT-004 documentation.
+- Added Enterprise Logging Architecture.
+- Added Zero Trust Monitoring Architecture.
+- Added AWS Logging Reference.
+- Added ADR-003: Adopt Centralized Security Logging & Monitoring.
+- Added module documentation.
+- Added deployment documentation.
+
+### Compliance
+
+- Added NIST SP 800-207 mapping.
+- Added NIST SP 800-53 mapping.
+- Added NIST Cybersecurity Framework mapping.
+
+### Industry Profiles
+
+- Added Federal logging guidance.
+- Added Financial Services monitoring guidance.
+- Added Healthcare audit logging guidance.
+- Added Energy infrastructure monitoring guidance.
+
+### Security
+
+- Implemented centralized audit logging.
+- Implemented continuous infrastructure monitoring.
+- Implemented automated security alerting.
+- Implemented configuration compliance monitoring.
+- Established the observability foundation for Zero Trust Architecture.
