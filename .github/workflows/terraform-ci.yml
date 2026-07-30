@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   terraform:
-    name: Validate All Deployments
+    name: Validate All Deployment Examples
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -32,55 +32,79 @@ jobs:
       - name: Display Terraform Version
         run: terraform version
 
-      - name: Discover Terraform deployment examples
-        id: discover
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v4
+
+      - name: Run TFLint
         shell: bash
         run: |
-          set -euo pipefail
-
-          echo "Searching for Terraform deployment examples..."
+          tflint --init
 
           find terraform/deployment-examples \
             -mindepth 1 \
             -maxdepth 1 \
-            -type d | sort > deployments.txt
+            -type d | sort | while IFS= read -r deployment
+          do
+            if [ -f "$deployment/main.tf" ]; then
+              echo "Running TFLint for $deployment"
+              tflint --chdir="$deployment"
+            fi
+          done
 
-          echo "Found the following deployment examples:"
-          cat deployments.txt
+      - name: Run Checkov
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: terraform
+          framework: terraform
+          quiet: true
 
-          {
-            echo "deployments<<EOF"
-            cat deployments.txt
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+      - name: Run Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: config
+          scan-ref: terraform
+          format: table
+          exit-code: "1"
 
-      - name: Validate all deployment examples
+      - name: Validate Terraform deployment examples
         shell: bash
         run: |
           set -euo pipefail
 
           mkdir -p tfplans
 
-          while IFS= read -r deployment; do
-
+          find terraform/deployment-examples \
+            -mindepth 1 \
+            -maxdepth 1 \
+            -type d | sort | while IFS= read -r deployment
+          do
             echo ""
             echo "========================================"
             echo "Processing deployment: $deployment"
             echo "========================================"
 
+            if [ ! -f "$deployment/main.tf" ]; then
+              echo "Skipping $deployment (main.tf not found)"
+              continue
+            fi
+
             terraform -chdir="$deployment" fmt -check -recursive
-
             terraform -chdir="$deployment" init -input=false
-
             terraform -chdir="$deployment" validate
-
             terraform -chdir="$deployment" plan \
               -input=false \
               -out=tfplan
 
             deployment_name=$(basename "$deployment")
-
             cp "$deployment/tfplan" "tfplans/${deployment_name}.tfplan"
 
-          done < deployments.txt
+          done
+
+      - name: Upload Terraform Plans
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-plans
+          path: tfplans
+          if-no-files-found: error
+          retention-days: 7
           
