@@ -1,14 +1,26 @@
 resource "aws_s3_bucket" "cloudtrail" {
   bucket = "${local.name_prefix}-cloudtrail-logs"
 
-  tags = local.common_tags
+  tags = merge(
+    local.common_tags,
+    {
+      Name      = "${local.name_prefix}-cloudtrail-logs"
+      Component = "S3"
+    }
+  )
 }
 
 resource "aws_cloudwatch_log_group" "cloudtrail" {
   name              = "/aws/cloudtrail/${local.name_prefix}"
   retention_in_days = var.log_retention_days
 
-  tags = local.common_tags
+  tags = merge(
+    local.common_tags,
+    {
+      Name      = "/aws/cloudtrail/${local.name_prefix}"
+      Component = "CloudWatchLogs"
+    }
+  )
 }
 
 resource "aws_cloudtrail" "this" {
@@ -24,5 +36,11 @@ resource "aws_cloudtrail" "this" {
   cloud_watch_logs_group_arn = "${aws_cloudwatch_log_group.cloudtrail.arn}:*"
   cloud_watch_logs_role_arn  = aws_iam_role.cloudtrail_logs.arn
 
-  tags = local.common_tags
+  tags = merge(
+    local.common_tags,
+    {
+      Name      = "${local.name_prefix}-trail"
+      Component = "CloudTrail"
+    }
+  )
 }

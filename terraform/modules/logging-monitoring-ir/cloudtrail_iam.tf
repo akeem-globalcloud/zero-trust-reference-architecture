@@ -29,7 +29,13 @@ resource "aws_iam_role" "cloudtrail_logs" {
   name               = "${local.name_prefix}-cloudtrail-logs-role"
   assume_role_policy = data.aws_iam_policy_document.cloudtrail_assume_role.json
 
-  tags = local.common_tags
+  tags = merge(
+    local.common_tags,
+    {
+      Name      = "${local.name_prefix}-cloudtrail-logs-role"
+      Component = "IAM"
+    }
+  )
 }
 
 #############################################

@@ -1,5 +1,5 @@
 module "logging" {
-  source = "../../modules/logging"
+  source = "../../modules/logging-monitoring-ir"
 
   ###########################################################
   # Story 4.0 Logging & Monitoring
@@ -20,9 +20,9 @@ module "logging" {
   # Story 4.1 Configuration
   ###########################################################
 
-  cloudtrail_bucket_name            = var.cloudtrail_bucket_name
-  enable_log_file_validation        = true
-  enable_organization_trail         = false
+  cloudtrail_bucket_name     = var.cloudtrail_bucket_name
+  enable_log_file_validation = true
+  enable_organization_trail  = false
 
   enable_delegated_admin            = false
   delegated_admin_account_id        = ""

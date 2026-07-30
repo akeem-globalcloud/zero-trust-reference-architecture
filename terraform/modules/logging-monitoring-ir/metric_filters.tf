@@ -9,7 +9,7 @@
 #############################################
 
 resource "aws_cloudwatch_log_metric_filter" "root_account_usage" {
-  name           = "RootAccountUsage"
+  name           = "${local.name_prefix}-root-account-usage"
   log_group_name = aws_cloudwatch_log_group.cloudtrail.name
 
   pattern = "{ ($.userIdentity.type = Root) && ($.userIdentity.invokedBy NOT EXISTS) }"
@@ -26,7 +26,7 @@ resource "aws_cloudwatch_log_metric_filter" "root_account_usage" {
 #############################################
 
 resource "aws_cloudwatch_log_metric_filter" "unauthorized_api_calls" {
-  name           = "UnauthorizedApiCalls"
+  name           = "${local.name_prefix}-unauthorized-api-calls"
   log_group_name = aws_cloudwatch_log_group.cloudtrail.name
 
   pattern = "{ ($.errorCode = \"*UnauthorizedOperation\") || ($.errorCode = \"AccessDenied*\") }"
@@ -43,7 +43,7 @@ resource "aws_cloudwatch_log_metric_filter" "unauthorized_api_calls" {
 #############################################
 
 resource "aws_cloudwatch_log_metric_filter" "console_login_failure" {
-  name           = "ConsoleLoginFailure"
+  name           = "${local.name_prefix}-console-login-failure"
   log_group_name = aws_cloudwatch_log_group.cloudtrail.name
 
   pattern = "{ ($.eventName = ConsoleLogin) && ($.errorMessage = \"Failed authentication\") }"
@@ -60,7 +60,7 @@ resource "aws_cloudwatch_log_metric_filter" "console_login_failure" {
 #############################################
 
 resource "aws_cloudwatch_log_metric_filter" "iam_policy_changes" {
-  name           = "IAMPolicyChanges"
+  name           = "${local.name_prefix}-iam-policy-changes"
   log_group_name = aws_cloudwatch_log_group.cloudtrail.name
 
   pattern = "{ ($.eventSource = iam.amazonaws.com) && (($.eventName = CreatePolicy) || ($.eventName = DeletePolicy) || ($.eventName = CreatePolicyVersion) || ($.eventName = DeletePolicyVersion) || ($.eventName = AttachRolePolicy) || ($.eventName = DetachRolePolicy)) }"
@@ -77,7 +77,7 @@ resource "aws_cloudwatch_log_metric_filter" "iam_policy_changes" {
 #############################################
 
 resource "aws_cloudwatch_log_metric_filter" "security_group_changes" {
-  name           = "SecurityGroupChanges"
+  name           = "${local.name_prefix}-security-group-changes"
   log_group_name = aws_cloudwatch_log_group.cloudtrail.name
 
   pattern = "{ ($.eventSource = ec2.amazonaws.com) && (($.eventName = AuthorizeSecurityGroupIngress) || ($.eventName = RevokeSecurityGroupIngress) || ($.eventName = AuthorizeSecurityGroupEgress) || ($.eventName = RevokeSecurityGroupEgress)) }"
@@ -94,7 +94,7 @@ resource "aws_cloudwatch_log_metric_filter" "security_group_changes" {
 #############################################
 
 resource "aws_cloudwatch_log_metric_filter" "cloudtrail_changes" {
-  name           = "CloudTrailConfigurationChanges"
+  name           = "${local.name_prefix}-cloudtrail-configuration-changes"
   log_group_name = aws_cloudwatch_log_group.cloudtrail.name
 
   pattern = "{ ($.eventSource = cloudtrail.amazonaws.com) && (($.eventName = StopLogging) || ($.eventName = DeleteTrail) || ($.eventName = UpdateTrail)) }"
@@ -111,7 +111,7 @@ resource "aws_cloudwatch_log_metric_filter" "cloudtrail_changes" {
 #############################################
 
 resource "aws_cloudwatch_log_metric_filter" "kms_key_deletion" {
-  name           = "KMSKeyDeletion"
+  name           = "${local.name_prefix}-kms-key-deletion"
   log_group_name = aws_cloudwatch_log_group.cloudtrail.name
 
   pattern = "{ ($.eventSource = kms.amazonaws.com) && ($.eventName = ScheduleKeyDeletion) }"

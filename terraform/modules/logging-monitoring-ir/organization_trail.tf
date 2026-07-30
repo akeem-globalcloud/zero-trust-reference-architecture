@@ -11,7 +11,7 @@
 resource "aws_cloudtrail" "organization" {
   count = var.enable_organization_trail ? 1 : 0
 
-  name                          = "zero-trust-organization-trail"
+  name                          = "${local.name_prefix}-organization-trail"
   s3_bucket_name                = var.cloudtrail_bucket_name
   is_organization_trail         = true
   is_multi_region_trail         = true
@@ -29,7 +29,7 @@ resource "aws_cloudtrail" "organization" {
   tags = merge(
     var.tags,
     {
-      Name      = "zero-trust-organization-trail"
+      Name      = "${local.name_prefix}-organization-trail"
       Component = "CloudTrail"
       Story     = "4.1"
       Scope     = "Organization"

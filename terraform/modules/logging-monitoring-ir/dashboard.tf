@@ -5,7 +5,7 @@
 #############################################################
 
 resource "aws_cloudwatch_dashboard" "security_operations" {
-  dashboard_name = "ZeroTrust-Security-Operations"
+  dashboard_name = "${local.name_prefix}-security-operations"
 
   dashboard_body = jsonencode({
 
@@ -19,7 +19,7 @@ resource "aws_cloudwatch_dashboard" "security_operations" {
         height = 1
 
         properties = {
-          markdown = "# Zero Trust Security Operations Dashboard"
+          markdown = "# ${local.name_prefix} Security Operations Dashboard"
         }
       },
 
@@ -31,10 +31,10 @@ resource "aws_cloudwatch_dashboard" "security_operations" {
         height = 6
 
         properties = {
-          title   = "Unauthorized API Calls"
-          view    = "timeSeries"
-          region  = var.aws_region
-          stat    = "Sum"
+          title  = "Unauthorized API Calls"
+          view   = "timeSeries"
+          region = var.aws_region
+          stat   = "Sum"
 
           metrics = [
             [
@@ -53,9 +53,9 @@ resource "aws_cloudwatch_dashboard" "security_operations" {
         height = 6
 
         properties = {
-          title   = "Console Login Failures"
-          region  = var.aws_region
-          stat    = "Sum"
+          title  = "Console Login Failures"
+          region = var.aws_region
+          stat   = "Sum"
 
           metrics = [
             [
@@ -74,8 +74,8 @@ resource "aws_cloudwatch_dashboard" "security_operations" {
         height = 6
 
         properties = {
-          title   = "Root Account Usage"
-          region  = var.aws_region
+          title  = "Root Account Usage"
+          region = var.aws_region
 
           metrics = [
             [
@@ -94,8 +94,8 @@ resource "aws_cloudwatch_dashboard" "security_operations" {
         height = 6
 
         properties = {
-          title   = "IAM Policy Changes"
-          region  = var.aws_region
+          title  = "IAM Policy Changes"
+          region = var.aws_region
 
           metrics = [
             [
@@ -114,8 +114,8 @@ resource "aws_cloudwatch_dashboard" "security_operations" {
         height = 6
 
         properties = {
-          title   = "Security Group Changes"
-          region  = var.aws_region
+          title  = "Security Group Changes"
+          region = var.aws_region
 
           metrics = [
             [
@@ -134,8 +134,8 @@ resource "aws_cloudwatch_dashboard" "security_operations" {
         height = 6
 
         properties = {
-          title   = "CloudTrail Changes"
-          region  = var.aws_region
+          title  = "CloudTrail Changes"
+          region = var.aws_region
 
           metrics = [
             [

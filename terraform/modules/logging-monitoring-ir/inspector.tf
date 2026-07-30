@@ -37,9 +37,9 @@ resource "aws_inspector2_organization_configuration" "this" {
   count = var.enable_organization_configuration ? 1 : 0
 
   auto_enable {
-    ec2    = true
-    ecr    = true
-    lambda = true
+    ec2             = true
+    ecr             = true
+    lambda          = true
     code_repository = false
   }
 
@@ -56,11 +56,11 @@ locals {
   inspector_tags = merge(
     var.tags,
     {
-      Service     = "Amazon Inspector"
-      ManagedBy   = "Terraform"
-      Story       = "4.1"
-      Version     = "v0.4.1"
-      Component   = "DetectionMonitoring"
+      Service   = "Amazon Inspector"
+      ManagedBy = "Terraform"
+      Story     = "4.1"
+      Version   = "v0.4.1"
+      Component = "Inspector"
     }
   )
 }

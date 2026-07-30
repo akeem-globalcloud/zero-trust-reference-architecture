@@ -9,12 +9,12 @@
 #############################################
 
 resource "aws_cloudwatch_event_bus" "security" {
-  name = "zero-trust-security-bus"
+  name = "${local.name_prefix}-security-bus"
 
   tags = merge(
     var.tags,
     {
-      Name      = "zero-trust-security-bus"
+      Name      = "${local.name_prefix}-security-bus"
       Component = "EventBridge"
       Story     = "4.1"
     }
@@ -26,7 +26,7 @@ resource "aws_cloudwatch_event_bus" "security" {
 #############################################
 
 resource "aws_cloudwatch_event_rule" "securityhub_findings" {
-  name        = "securityhub-findings"
+  name        = "${local.name_prefix}-securityhub-findings"
   description = "Capture AWS Security Hub findings."
 
   event_pattern = jsonencode({
@@ -45,7 +45,7 @@ resource "aws_cloudwatch_event_rule" "securityhub_findings" {
 #############################################
 
 resource "aws_cloudwatch_event_rule" "inspector_findings" {
-  name        = "inspector-findings"
+  name        = "${local.name_prefix}-inspector-findings"
   description = "Capture Amazon Inspector findings."
 
   event_pattern = jsonencode({
@@ -64,7 +64,7 @@ resource "aws_cloudwatch_event_rule" "inspector_findings" {
 #############################################
 
 resource "aws_cloudwatch_event_rule" "config_changes" {
-  name        = "config-compliance"
+  name        = "${local.name_prefix}-config-compliance"
   description = "Capture AWS Config compliance changes."
 
   event_pattern = jsonencode({
@@ -83,7 +83,7 @@ resource "aws_cloudwatch_event_rule" "config_changes" {
 #############################################
 
 resource "aws_cloudwatch_event_rule" "cloudtrail_security" {
-  name        = "cloudtrail-security-events"
+  name        = "${local.name_prefix}-cloudtrail-security-events"
   description = "Capture CloudTrail API activity."
 
   event_pattern = jsonencode({
