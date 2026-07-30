@@ -1,0 +1,86 @@
+name: Terraform CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+  pull_request:
+    branches:
+      - main
+      - dev
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    name: Validate All Deployments
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.13.2
+
+      - name: Display Terraform Version
+        run: terraform version
+
+      - name: Discover Terraform deployment examples
+        id: discover
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "Searching for Terraform deployment examples..."
+
+          find terraform/deployment-examples \
+            -mindepth 1 \
+            -maxdepth 1 \
+            -type d | sort > deployments.txt
+
+          echo "Found the following deployment examples:"
+          cat deployments.txt
+
+          {
+            echo "deployments<<EOF"
+            cat deployments.txt
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Validate all deployment examples
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p tfplans
+
+          while IFS= read -r deployment; do
+
+            echo ""
+            echo "========================================"
+            echo "Processing deployment: $deployment"
+            echo "========================================"
+
+            terraform -chdir="$deployment" fmt -check -recursive
+
+            terraform -chdir="$deployment" init -input=false
+
+            terraform -chdir="$deployment" validate
+
+            terraform -chdir="$deployment" plan \
+              -input=false \
+              -out=tfplan
+
+            deployment_name=$(basename "$deployment")
+
+            cp "$deployment/tfplan" "tfplans/${deployment_name}.tfplan"
+
+          done < deployments.txt
+          
