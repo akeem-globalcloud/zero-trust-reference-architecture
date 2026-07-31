@@ -131,3 +131,9 @@ variable "enable_log_file_validation" {
   type        = bool
   default     = true
 }
+
+variable "kms_key_deletion_window" {
+  description = "KMS key deletion window in days."
+  type        = number
+  default     = 30
+}

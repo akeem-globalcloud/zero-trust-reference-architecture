@@ -70,3 +70,13 @@ output "security_dashboard_name" {
 
   value = aws_cloudwatch_dashboard.security_operations.dashboard_name
 }
+
+output "logging_kms_key_arn" {
+  description = "ARN of the logging KMS key."
+  value       = aws_kms_key.logging.arn
+}
+
+output "logging_kms_key_id" {
+  description = "ID of the logging KMS key."
+  value       = aws_kms_key.logging.key_id
+}
