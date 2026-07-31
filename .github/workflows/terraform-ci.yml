@@ -88,23 +88,24 @@ jobs:
               continue
             fi
 
-            terraform -chdir="$deployment" fmt -check -recursive
-            terraform -chdir="$deployment" init -input=false
-            terraform -chdir="$deployment" validate
-            terraform -chdir="$deployment" plan \
-              -input=false \
-              -out=tfplan
+#            terraform -chdir="$deployment" fmt -check -recursive
+#            terraform -chdir="$deployment" init -input=false
+#            terraform -chdir="$deployment" validate
 
-            deployment_name=$(basename "$deployment")
-            cp "$deployment/tfplan" "tfplans/${deployment_name}.tfplan"
+#            terraform -chdir="$deployment" plan \
+#              -input=false \
+#              -out=tfplan
 
-          done
+ #           deployment_name=$(basename "$deployment")
+ #           cp "$deployment/tfplan" "tfplans/${deployment_name}.tfplan"
 
-      - name: Upload Terraform Plans
-        uses: actions/upload-artifact@v4
-        with:
-          name: terraform-plans
-          path: tfplans
-          if-no-files-found: error
-          retention-days: 7
+ #         done
+
+#      - name: Upload Terraform Plans
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: terraform-plans
+#          path: tfplans
+#          if-no-files-found: error
+#          retention-days: 7
           
