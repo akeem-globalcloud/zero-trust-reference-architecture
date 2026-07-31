@@ -31,19 +31,41 @@ data "aws_iam_policy_document" "assume_role" {
 
 data "aws_iam_policy_document" "base_policy" {
 
+  #
+  # Create new CloudWatch Log Groups
+  #
   statement {
 
-    sid = "CloudWatchLogs"
-
+    sid    = "CreateLogGroup"
     effect = "Allow"
 
     actions = [
-      "logs:CreateLogGroup",
+      "logs:CreateLogGroup"
+    ]
+
+    resources = [
+      "*"
+    ]
+
+  }
+
+  #
+  # Write to CloudWatch Log Groups
+  #
+  statement {
+
+    sid    = "WriteCloudWatchLogs"
+    effect = "Allow"
+
+    actions = [
       "logs:CreateLogStream",
       "logs:PutLogEvents"
     ]
 
-    resources = ["*"]
+    resources = [
+      "arn:aws:logs:*:*:log-group:*",
+      "arn:aws:logs:*:*:log-group:*:log-stream:*"
+    ]
 
   }
 
