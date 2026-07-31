@@ -1,5 +1,8 @@
 resource "aws_s3_bucket" "cloudtrail" {
+
   bucket = "${local.name_prefix}-cloudtrail-logs"
+
+  force_destroy = false
 
   tags = merge(
     local.common_tags,
@@ -76,4 +79,41 @@ resource "aws_cloudtrail" "this" {
       Component = "CloudTrail"
     }
   )
+}
+
+resource "aws_s3_bucket_logging" "cloudtrail" {
+
+  bucket = aws_s3_bucket.cloudtrail.id
+
+  target_bucket = aws_s3_bucket.cloudtrail.id
+
+  target_prefix = "access-logs/"
+}
+
+resource "aws_s3_bucket_lifecycle_configuration" "cloudtrail" {
+
+  bucket = aws_s3_bucket.cloudtrail.id
+
+  rule {
+
+    id = "cloudtrail-log-lifecycle"
+
+    status = "Enabled"
+
+    filter {
+      prefix = ""
+    }
+
+    transition {
+
+      days = 90
+
+      storage_class = "STANDARD_IA"
+    }
+
+    expiration {
+
+      days = 3650
+    }
+  }
 }
