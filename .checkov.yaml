@@ -1,0 +1,10 @@
+skip-check:
+  - CKV_AWS_111   # CloudWatch Logs CreateLogGroup requires "*"
+  - CKV_AWS_356   # AWS limitation for CreateLogGroup
+  - CKV_AWS_130   # Public subnets intentionally assign public IPs
+  - CKV2_AWS_5    # Security Group is a reusable module; attached by consumers
+  - CKV2_AWS_1    # NACL attachment evaluated at deployment
+  - CKV2_AWS_19   # NAT Gateway EIP attachment
+  - CKV_AWS_144   # Cross-region replication intentionally omitted
+  - CKV2_AWS_62   # S3 event notifications not required in this reference architecture
+  
