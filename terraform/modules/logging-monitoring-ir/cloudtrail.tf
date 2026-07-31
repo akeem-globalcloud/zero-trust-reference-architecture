@@ -96,24 +96,29 @@ resource "aws_s3_bucket_lifecycle_configuration" "cloudtrail" {
 
   rule {
 
-    id = "cloudtrail-log-lifecycle"
+  id = "cloudtrail-log-lifecycle"
 
-    status = "Enabled"
+  status = "Enabled"
 
-    filter {
-      prefix = ""
-    }
-
-    transition {
-
-      days = 90
-
-      storage_class = "STANDARD_IA"
-    }
-
-    expiration {
-
-      days = 3650
-    }
+  filter {
+    prefix = ""
   }
+
+  abort_incomplete_multipart_upload {
+
+    days_after_initiation = 7
+  }
+
+  transition {
+
+    days = 90
+
+    storage_class = "STANDARD_IA"
+  }
+
+  expiration {
+
+    days = 3650
+   }
+ }
 }
