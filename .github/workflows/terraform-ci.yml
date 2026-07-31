@@ -71,8 +71,6 @@ jobs:
         run: |
           set -euo pipefail
 
-          mkdir -p tfplans
-
           find terraform/deployment-examples \
             -mindepth 1 \
             -maxdepth 1 \
@@ -88,24 +86,30 @@ jobs:
               continue
             fi
 
-#            terraform -chdir="$deployment" fmt -check -recursive
-#            terraform -chdir="$deployment" init -input=false
-#            terraform -chdir="$deployment" validate
+            terraform -chdir="$deployment" fmt -check -recursive
+            terraform -chdir="$deployment" init -input=false
+            terraform -chdir="$deployment" validate
 
-#            terraform -chdir="$deployment" plan \
-#              -input=false \
-#              -out=tfplan
+            # Uncomment the following block when AWS credentials
+            # are configured in GitHub Actions secrets.
 
- #           deployment_name=$(basename "$deployment")
- #           cp "$deployment/tfplan" "tfplans/${deployment_name}.tfplan"
+            # terraform -chdir="$deployment" plan \
+            #   -input=false \
+            #   -out=tfplan
+            #
+            # deployment_name=$(basename "$deployment")
+            # mkdir -p tfplans
+            # cp "$deployment/tfplan" "tfplans/${deployment_name}.tfplan"
 
           done
 
-#      - name: Upload Terraform Plans
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: terraform-plans
-#          path: tfplans
-#          if-no-files-found: error
-#          retention-days: 7
-          
+      # Uncomment this step if Terraform plan is enabled above.
+      #
+      # - name: Upload Terraform Plans
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: terraform-plans
+      #     path: tfplans
+      #     if-no-files-found: error
+      #     retention-days: 7
+      
