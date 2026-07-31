@@ -4,19 +4,18 @@
 
 resource "aws_security_group" "application" {
 
-  name = "${local.name_prefix}-application"
-
+  name        = "${local.name_prefix}-application"
   description = "Application Security Group"
 
   vpc_id = aws_vpc.this.id
 
   ingress {
 
+    description = "Allow HTTPS traffic from within the VPC"
+
     from_port = 443
-
-    to_port = 443
-
-    protocol = "tcp"
+    to_port   = 443
+    protocol  = "tcp"
 
     cidr_blocks = [
       var.vpc_cidr
@@ -25,11 +24,11 @@ resource "aws_security_group" "application" {
 
   egress {
 
-    from_port = 0
+    description = "Allow HTTPS outbound traffic"
 
-    to_port = 0
-
-    protocol = "-1"
+    from_port = 443
+    to_port   = 443
+    protocol  = "tcp"
 
     cidr_blocks = [
       "0.0.0.0/0"
