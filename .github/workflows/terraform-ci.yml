@@ -99,7 +99,7 @@ jobs:
  #           deployment_name=$(basename "$deployment")
  #           cp "$deployment/tfplan" "tfplans/${deployment_name}.tfplan"
 
- #         done
+          done
 
 #      - name: Upload Terraform Plans
 #        uses: actions/upload-artifact@v4
