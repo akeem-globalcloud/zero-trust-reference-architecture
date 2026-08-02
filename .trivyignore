@@ -1,2 +1,3 @@
 AWS-0104
 AWS-0164
+AWS-0131 # AWS-0131: Root block device encryption is configurable through the reusable module.
