@@ -1,0 +1,11 @@
+###############################################################
+# KMS Alias
+###############################################################
+
+resource "aws_kms_alias" "this" {
+
+  name = local.alias_name
+
+  target_key_id = aws_kms_key.this.key_id
+
+}
