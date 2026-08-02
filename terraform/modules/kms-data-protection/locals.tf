@@ -11,8 +11,8 @@ locals {
 
   alias_name = (
     startswith(var.kms.alias, "alias/")
-      ? var.kms.alias
-      : "alias/${var.kms.alias}"
+    ? var.kms.alias
+    : "alias/${var.kms.alias}"
   )
 
   default_tags = {

@@ -10,8 +10,8 @@ resource "aws_kms_key" "this" {
 
   enable_key_rotation = (
     var.kms.key_spec == "SYMMETRIC_DEFAULT"
-      ? var.kms.rotation_enabled
-      : false
+    ? var.kms.rotation_enabled
+    : false
   )
 
   multi_region            = var.kms.multi_region
