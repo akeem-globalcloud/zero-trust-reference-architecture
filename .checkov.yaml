@@ -8,3 +8,5 @@ skip-check:
   - CKV_AWS_144   # Cross-region replication intentionally omitted
   - CKV2_AWS_62   # S3 event notifications not required in this reference architecture
   - CKV_AWS_109   # AWS KMS default root policy is required to enable IAM permissions for key administration.
+  - CKV_AWS_304   # Rotation interval is configurable by module consumers and validated through module input constraints to be no greater than 90 days.
+  

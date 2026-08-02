@@ -1,7 +1,7 @@
 # ADR-002: Adopt Multi-Account Network Segmentation
 
-- **Status:** Accepted
-- **Date:** July 2026
+- **Status:** Completed
+
 - **Story:** ZT-003 – Enterprise Network & Connectivity Architecture
 
 ---

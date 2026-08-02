@@ -6,7 +6,7 @@ Adopt Centralized Security Logging & Monitoring
 
 ## Status
 
-Accepted
+Completed
 
 ## Context
 

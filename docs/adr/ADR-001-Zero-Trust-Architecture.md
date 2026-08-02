@@ -1,7 +1,7 @@
 # ADR-001: Adopt Zero Trust Architecture
 
-- **Status:** Accepted
-- **Date:** July 2026
+- **Status:** Completed
+
 - **Story:** ZT-002 – Enterprise Zero Trust Architecture Identity & Access Management
 
 ---

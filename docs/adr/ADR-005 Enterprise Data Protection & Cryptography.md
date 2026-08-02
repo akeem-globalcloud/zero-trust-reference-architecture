@@ -2,13 +2,7 @@
 
 ## Status
 
-Accepted
-
----
-
-## Date
-
-2026-08-02
+Completed
 
 ---
 
