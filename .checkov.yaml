@@ -11,4 +11,7 @@ skip-check:
   - CKV_AWS_304   # Rotation interval is configurable by module consumers and validated through module input constraints to be no greater than 90 days.
   - CKV_AWS_79    # IMDSv2 is enforced through the module metadata configuration.
   - CKV_AWS_126   # Detailed monitoring is configurable and enabled through module inputs.
+  - CKV_AWS_109   # KMS key policy requires administrative permissions for the account owner.
+  - CKV_AWS_111   #KMS key policy intentionally grants required key management actions.
+  - CKV_AWS_356   #KMS key policies use Resource "*" because the policy is attached to a specific KMS key.
   
