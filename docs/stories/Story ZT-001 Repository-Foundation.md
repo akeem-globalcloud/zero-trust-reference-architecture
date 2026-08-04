@@ -24,9 +24,10 @@ Completed
 
 ---
 
-## Description
+## User Story
 
-As a Cloud Security & Infrastructure Engineer, establish a standardized enterprise repository for the Zero Trust Reference Architecture so that cloud security frameworks, reusable infrastructure modules, documentation, automation, and reference implementations can be developed consistently and adopted across critical infrastructure environments.
+As a Cloud Security & Infrastructure Engineer, I want to establish a standardized enterprise repository for the Zero Trust Reference Architecture,
+So that cloud security frameworks, reusable infrastructure modules, documentation, automation, and reference implementations can be developed consistently and adopted across critical infrastructure environments.
 
 ---
 

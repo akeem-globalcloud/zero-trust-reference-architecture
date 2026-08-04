@@ -6,9 +6,10 @@
 
 ---
 
-# Description
+# User Story
 
-**As a Cloud Security and Infrastructure Engineer,** I want to provision a secure, scalable, and reusable AWS networking foundation using Terraform so that enterprise workloads can be deployed consistently across environments while adhering to Zero Trust principles, reducing operational complexity, and providing a standardized networking architecture for enterprise cloud deployments.
+**As a Cloud Security and Infrastructure Engineer,** I want to provision a secure, scalable, and reusable AWS networking foundation using Terraform,
+So that enterprise workloads can be deployed consistently across environments while adhering to Zero Trust principles, reducing operational complexity, and providing a standardized networking architecture for enterprise cloud deployments.
 
 ---
 

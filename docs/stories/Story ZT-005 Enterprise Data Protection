@@ -18,9 +18,10 @@ Implement Enterprise Data Protection & Cryptography Using AWS Key Management Ser
 
 ---
 
-# Description
+# User Story
 
-As a **Cloud Security Engineer**, deploy an enterprise-grade AWS Key Management Service (AWS KMS) solution using Terraform so that encryption keys are centrally managed, cryptographic operations are standardized, and AWS workloads can securely encrypt data while complying with Zero Trust security principles and enterprise regulatory requirements.
+As a **Cloud Security Engineer**, deploy an enterprise-grade AWS Key Management Service (AWS KMS) solution using Terraform, 
+So that encryption keys are centrally managed, cryptographic operations are standardized, and AWS workloads can securely encrypt data while complying with Zero Trust security principles and enterprise regulatory requirements.
 
 The solution should provide reusable infrastructure that enables development teams to provision customer-managed encryption keys consistently across multiple environments while enforcing least-privilege access, automated key rotation, centralized governance, and lifecycle protection.
 

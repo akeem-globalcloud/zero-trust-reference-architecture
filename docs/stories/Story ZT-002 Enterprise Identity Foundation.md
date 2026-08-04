@@ -13,9 +13,10 @@
 
 ---
 
-## Description
+## User Story
 
-As a Cloud Security and Infrastructure Engineer, I want to implement a reusable enterprise Identity and Access Management (IAM) framework using Terraform so that cloud resources can be accessed securely through least privilege, role-based access control, and policy-driven authorization while supporting Zero Trust security principles.
+As a Cloud Security and Infrastructure Engineer, I want to implement a reusable enterprise Identity and Access Management (IAM) framework using Terraform,
+So that cloud resources can be accessed securely through least privilege, role-based access control, and policy-driven authorization while supporting Zero Trust security principles.
 
 ---
 

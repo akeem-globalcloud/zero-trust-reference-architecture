@@ -14,7 +14,8 @@ High
 
 ## User Story
 
-As a Cloud Security Engineer, I want to deploy secure Amazon EC2 workloads using reusable Terraform modules so that enterprise workloads follow Zero Trust principles, enforce security best practices, and support compliance requirements across development, testing, and production environments.
+As a Cloud Security Engineer, I want to deploy secure Amazon EC2 workloads using reusable Terraform modules,
+So that enterprise workloads follow Zero Trust principles, enforce security best practices, and support compliance requirements across development, testing, and production environments.
 
 ---
 

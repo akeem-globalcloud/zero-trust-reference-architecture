@@ -23,9 +23,10 @@ Completed
 
 ---
 
-# Description
+# User Story
 
-**As a Cloud Security Engineer, deploy AWS Secrets Manager using Terraform so that application secrets, API keys, database credentials, certificates, and other sensitive configuration values are securely stored, encrypted, rotated, and accessed using least-privilege permissions while supporting Zero Trust security principles and enterprise compliance requirements.**
+**As a Cloud Security Engineer,** I want to deploy AWS Secrets Manager using Terraform, 
+So that application secrets, API keys, database credentials, certificates, and other sensitive configuration values are securely stored, encrypted, rotated, and accessed using least-privilege permissions while supporting Zero Trust security principles and enterprise compliance requirements.
 
 ---
 
