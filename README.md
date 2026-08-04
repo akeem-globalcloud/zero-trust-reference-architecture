@@ -2,6 +2,21 @@
 
 > Enterprise Zero Trust Architecture reference implementation for cloud-native and hybrid environments supporting critical infrastructure across federal, financial services, healthcare, energy, manufacturing, and other regulated industries.
 
+### Enterprise Cloud Security, DevSecOps, GRC & Infrastructure Automation with Terraform
+
+![Terraform](https://img.shields.io/badge/Terraform-IaC-623CE4?logo=terraform)
+![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?logo=amazonaws)
+![Python](https://img.shields.io/badge/Python-Automation-3776AB?logo=python)
+![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-2088FF?logo=githubactions)
+![Checkov](https://img.shields.io/badge/Checkov-IaC%20Security-6C2DC7)
+![Trivy](https://img.shields.io/badge/Trivy-Vulnerability%20Scanning-1904DA)
+![Semgrep](https://img.shields.io/badge/Semgrep-SAST-00C7B7)
+![OWASP ZAP](https://img.shields.io/badge/OWASP-ZAP-00549E)
+![NIST](https://img.shields.io/badge/NIST-800--207%20%7C%20800--53-blue)
+![CIS Controls](https://img.shields.io/badge/CIS-Controls-003B6F)
+![FedRAMP](https://img.shields.io/badge/FedRAMP-Compliant-005EA2)
+![HIPAA](https://img.shields.io/badge/HIPAA-Security%20Rule-0096D6)
+![License](https://img.shields.io/badge/License-MIT-green)
 ---
 
 ## Overview
