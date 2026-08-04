@@ -178,7 +178,7 @@ The reference architecture is designed for organizations operating in:
 | Version | Capability | Stories | Status |
 |----------|------------|---------|--------|
 | **v0.1.0** | Repository Foundation | ZT-001 Repository Foundation | ✅ Completed |
-| **v0.2.0** | Enterprise Identity Foundation | ZT-002 Enterprise Identity Foundation | ✅ Completed |
+| **v0.2.0** | Enterprise Enterprise Identity & Access Management | ZT-002 Enterprise Identity & Access Management | ✅ Completed |
 | **v0.3.0** | Enterprise Network Connectivity | ZT-003 Enterprise Network Connectivity | ✅ Completed |
 | **v0.4.0** | Enterprise Logging & Monitoring | ZT-004 Enterprise Logging & Monitoring | ✅ Completed |
 | **v0.5.0** | Detection, Monitoring & Incident Response | ZT-004.1 Detection, Monitoring & Incident Response | ✅ Completed |
