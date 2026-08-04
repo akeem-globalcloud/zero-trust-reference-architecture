@@ -14,7 +14,7 @@ High
 
 ## Epic
 
-Repository Foundation
+Zero Trust Reference Architecture 
 
 ---
 

@@ -7,7 +7,7 @@
 | **Story ID** | ZT-002                         |
 | **Title**    | Enterprise Identity Foundation |
 | **Priority** | High                           |
-| **Epic**     | Identity & Access Management   |
+| **Epic**     | Zero Trust Reference Architecture    |
 | **Status**   | Completed                      |
 | **Version**  | v0.2.0                         |
 

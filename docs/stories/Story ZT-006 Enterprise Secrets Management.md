@@ -2,7 +2,7 @@
 
 ## Epic
 
-Enterprise Security Security Platform
+Zero Trust Reference Architecture 
 ---
 
 ## Story ID

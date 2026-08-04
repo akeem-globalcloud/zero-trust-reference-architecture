@@ -2,7 +2,7 @@
 
 ## Epic
 
-Enterprise Security Operations
+Zero Trust Reference Architecture 
 
 ## Priority
 

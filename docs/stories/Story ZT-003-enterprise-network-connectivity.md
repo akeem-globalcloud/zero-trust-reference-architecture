@@ -15,7 +15,7 @@ So that enterprise workloads can be deployed consistently across environments wh
 
 # Epic
 
-Enterprise Zero Trust Infrastructure
+Zero Trust Reference Architecture 
 
 ---
 

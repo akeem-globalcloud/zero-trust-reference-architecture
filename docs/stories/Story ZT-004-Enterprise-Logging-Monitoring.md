@@ -10,7 +10,7 @@ The deployment provides continuous visibility into AWS infrastructure by collect
 
 ## User Story
 
-**As a Cloud Security and Infrastructure Engineer,** implement centralized logging and monitoring across AWS infrastructure using Terraform,
+**As a Cloud Security and Infrastructure Engineer,** I want to implement centralized logging and monitoring across AWS infrastructure using Terraform,
 So that security events, operational metrics, infrastructure health, and compliance evidence can be collected, monitored, analyzed, and retained to support continuous visibility, threat detection, incident response, and Zero Trust security principles.
 
 ---
