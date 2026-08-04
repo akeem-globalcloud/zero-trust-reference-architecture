@@ -6,11 +6,11 @@
 
 ## Overview
 
-The **Zero Trust Reference Architecture** project provides a practical implementation-focused framework for designing, securing, and operating cloud-native and hybrid environments using Zero Trust principles.
+The **Zero Trust Reference Architecture** project provides a practical, implementation-focused framework for designing, securing, and operating cloud-native and hybrid environments using Zero Trust principles.
 
-This repository combines architecture guidance, infrastructure-as-code, security automation, policy definitions, detection engineering, and implementation documentation into a reusable reference that organizations can adapt to their own environments.
+This repository combines architecture guidance, Infrastructure as Code (IaC), security automation, policy definitions, detection engineering, and implementation documentation into a reusable reference that organizations can adapt to their own environments.
 
-Rather than focusing on a single industry or cloud provider, the project is designed to demonstrate security patterns that are applicable across multiple sectors while allowing industry-specific implementation guidance where required.
+Rather than focusing on a single industry or cloud provider, the project demonstrates enterprise security patterns that are applicable across multiple sectors while allowing industry-specific implementation guidance where required.
 
 ---
 
@@ -29,14 +29,15 @@ Rather than focusing on a single industry or cloud provider, the project is desi
 
 ## Core Capabilities
 
-- Identity & Access Management
 - Zero Trust Architecture
+- Identity & Access Management
 - Cloud Infrastructure Security
 - Network Security
 - Data Protection
 - Application Security
 - Security Monitoring
 - Detection Engineering
+- Vulnerability Management
 - Security Automation
 - Governance & Compliance
 
@@ -44,7 +45,7 @@ Rather than focusing on a single industry or cloud provider, the project is desi
 
 ## Repository Structure
 
-```
+```text
 zero-trust-reference-architecture/
 
 ├── automation/         Security automation
@@ -63,7 +64,7 @@ zero-trust-reference-architecture/
 
 ## Technology Stack
 
-### Cloud
+### Cloud Platforms
 
 - Amazon Web Services (AWS)
 - Microsoft Azure
@@ -80,17 +81,20 @@ zero-trust-reference-architecture/
 - Python
 - Bash
 
-### Security
+### Security Services
 
 - AWS IAM
 - IAM Identity Center
 - AWS Organizations
-- GuardDuty
-- Security Hub
-- Inspector
-- CloudTrail
+- Amazon GuardDuty
+- AWS Security Hub
+- Amazon Inspector
+- AWS WAF
+- AWS CloudTrail
+- Amazon CloudWatch
 - AWS Config
 - AWS KMS
+- AWS Secrets Manager
 
 ### DevSecOps
 
@@ -104,12 +108,12 @@ zero-trust-reference-architecture/
 
 ## Standards Alignment
 
-The architecture aligns with widely adopted cybersecurity frameworks including:
+The architecture aligns with industry-recognized cybersecurity frameworks, including:
 
 - NIST SP 800-207 (Zero Trust Architecture)
-- NIST Cybersecurity Framework
+- NIST Cybersecurity Framework (CSF)
 - NIST SP 800-53
-- CIS Controls
+- CIS Critical Security Controls
 - FedRAMP
 - PCI DSS
 - HIPAA Security Rule
@@ -120,7 +124,7 @@ The architecture aligns with widely adopted cybersecurity frameworks including:
 
 ## Industry Applicability
 
-The reference architecture is designed to support organizations operating in:
+The reference architecture is designed for organizations operating in:
 
 - Federal Government
 - Financial Services
@@ -132,20 +136,61 @@ The reference architecture is designed to support organizations operating in:
 
 ---
 
-## Roadmap
+# Implementation Projects
 
-| Version | Milestone |
-|----------|-----------|
-| v0.1.0 | Repository Foundation |
-| v0.2.0 | Zero Trust Architecture & Identity |
-| v0.3.0 | Secure Network & Platform |
-| v0.4.0 | Data Protection |
-| v0.5.0 | Application Security |
-| v0.6.0 | Detection & Monitoring |
-| v0.7.0 | Security Automation |
-| v0.8.0 | Governance & Compliance |
-| v0.9.0 | Industry Reference Implementations |
-| v1.0.0 | Production Release |
+- Repository Foundation
+- Enterprise Identity Foundation
+- Enterprise Network Connectivity
+- Enterprise Logging & Monitoring
+- Detection, Monitoring & Incident Response
+- Enterprise Data Protection & Cryptography
+- Enterprise Secrets Management
+- Enterprise Workload Protection
+- Enterprise Vulnerability Management
+- Enterprise Security Information & Event Management (SIEM)
+- Enterprise Web Application Firewall (AWS WAF)
+- Enterprise API Protection
+- Container & Kubernetes Security
+- Software Supply Chain Security
+- Security Automation & Orchestration
+- Governance, Risk & Compliance (GRC)
+- Multi-Sector Reference Implementations
+
+---
+
+# Release Roadmap
+
+| Version | Capability | Stories | Status |
+|----------|------------|---------|--------|
+| **v0.1.0** | Repository Foundation | ZT-001 Repository Foundation | ✅ Completed |
+| **v0.2.0** | Enterprise Identity Foundation | ZT-002 Enterprise Identity Foundation | ✅ Completed |
+| **v0.3.0** | Enterprise Network Connectivity | ZT-003 Enterprise Network Connectivity | ✅ Completed |
+| **v0.4.0** | Enterprise Logging & Monitoring | ZT-004 Enterprise Logging & Monitoring | ✅ Completed |
+| **v0.5.0** | Detection, Monitoring & Incident Response | ZT-004.1 Detection, Monitoring & Incident Response | ✅ Completed |
+| **v0.6.0** | Enterprise Data Protection & Cryptography | ZT-005 Enterprise Data Protection & Cryptography | ✅ Completed |
+| **v0.7.0** | Enterprise Secrets Management & Workload Protection | ZT-006 Enterprise Secrets Management<br>ZT-007 Enterprise Workload Protection | ✅ Completed |
+| **v0.8.0** | Enterprise Vulnerability Management | ZT-008 Enterprise Vulnerability Management | ✅ Completed |
+| **v0.9.0** | Enterprise Security Information & Event Management (SIEM) | ZT-009 Enterprise SIEM | ✅ Completed |
+| **v0.10.0** | Enterprise Web Application Firewall (AWS WAF) | ZT-010 Enterprise Web Application Firewall (AWS WAF) | 🚧 In Progress |
+| **v0.11.0** | Enterprise API Protection | ZT-011 Enterprise API Protection | 📋 Planned |
+| **v0.12.0** | Container & Kubernetes Security | ZT-012 Container & Kubernetes Security | 📋 Planned |
+| **v0.13.0** | Software Supply Chain Security | ZT-013 Software Supply Chain Security | 📋 Planned |
+| **v0.14.0** | Security Automation & Orchestration | TBD | 📋 Planned |
+| **v0.15.0** | Governance, Risk & Compliance (GRC) | TBD | 📋 Planned |
+| **v0.16.0** | Multi-Sector Reference Implementations | TBD | 📋 Planned |
+| **v1.0.0** | Production Release | Complete Zero Trust Reference Architecture | 🚀 Target Release |
+
+---
+
+## Current Status
+
+The project is actively under development and follows a phased implementation strategy.
+
+- **Completed Releases:** 9
+- **Current Release:** v0.10.0 – Enterprise Web Application Firewall (AWS WAF)
+- **Next Planned Release:** v0.11.0 – Enterprise API Protection
+
+The repository continues to evolve with production-ready Terraform modules, reusable reference architectures, implementation guides, security automation, and documentation for Zero Trust deployments across regulated industries.
 
 ---
 
@@ -153,7 +198,17 @@ The reference architecture is designed to support organizations operating in:
 
 Project documentation is organized under the `docs/` directory.
 
-Additional implementation guidance, architecture diagrams, and deployment documentation will be added as the project evolves.
+Documentation includes:
+
+- Architecture Decision Records (ADRs)
+- Implementation Stories
+- Deployment Guides
+- Module Documentation
+- Architecture Diagrams
+- Validation Reports
+- Security Best Practices
+
+Additional documentation will be added as new releases are completed.
 
 ---
 
@@ -161,10 +216,10 @@ Additional implementation guidance, architecture diagrams, and deployment docume
 
 Contributions, suggestions, and improvements are welcome.
 
-Please review the **CONTRIBUTING.md** document before submitting changes.
+Please review **CONTRIBUTING.md** before submitting issues, feature requests, or pull requests.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
