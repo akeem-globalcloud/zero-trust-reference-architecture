@@ -19,7 +19,7 @@ The **Zero Trust Reference Architecture** follows a phased implementation approa
 | **v0.10.0** | Enterprise Web Application Firewall (AWS WAF) | ZT-010 Enterprise Web Application Firewall (AWS WAF) | 🚧 In Progress |
 | **v0.11.0** | Enterprise API Protection | ZT-011 Enterprise API Protection | 🚧 In Progress |
 | **v0.12.0** | Container & Kubernetes Security | ZT-012 Container & Kubernetes Security | 🚧 In Progress |
-| **v0.13.0** | Software Supply Chain Security | ZT-013 Software Supply Chain Security 🚧 In Progress |
+| **v0.13.0** | Software Supply Chain Security | ZT-013 Software Supply Chain Security | 🚧 In Progress |
 | **v0.14.0** | Security Automation & Orchestration | Future Stories | 📋 Planned |
 | **v0.15.0** | Governance, Risk & Compliance (GRC) | Future Stories | 📋 Planned |
 | **v0.16.0** | Multi-Sector Reference Implementations | Future Stories | 📋 Planned |
