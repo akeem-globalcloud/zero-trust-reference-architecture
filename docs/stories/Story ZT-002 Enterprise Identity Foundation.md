@@ -5,7 +5,7 @@
 | Attribute    | Value                          |
 | ------------ | ------------------------------ |
 | **Story ID** | ZT-002                         |
-| **Title**    | Enterprise Identity Enterprise Identity & Access Management |
+| **Title**    | Enterprise Identity & Access Management |
 | **Priority** | High                           |
 | **Epic**     | Zero Trust Reference Architecture    |
 | **Status**   | Completed                      |
