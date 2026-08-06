@@ -3,26 +3,26 @@
 The **Zero Trust Reference Architecture** follows a phased implementation approach that incrementally builds an enterprise-grade cloud security platform. Each release introduces a major security capability aligned with Zero Trust principles while remaining modular, reusable, and production-ready.
 
 ---
-
 # Release Roadmap
 
 | Version | Capability | Stories | Status |
 |----------|------------|---------|--------|
-| **v0.1.0** | Repository Foundation | ZT-001 Repository Foundation | ✅ Completed |
-| **v0.2.0** | Enterprise Identity Foundation | ZT-002 Enterprise Identity Foundation | ✅ Completed |
+| **v0.1.0** | Repository Foundation | ZT-001 Architecture Foundation | ✅ Completed |
+| **v0.2.0** | Enterprise Identity Enterprise Identity & Access Management | ZT-002 Enterprise Identity & Access Management | ✅ Completed |
 | **v0.3.0** | Enterprise Network Connectivity | ZT-003 Enterprise Network Connectivity | ✅ Completed |
 | **v0.4.0** | Enterprise Logging & Monitoring | ZT-004 Enterprise Logging & Monitoring | ✅ Completed |
 | **v0.5.0** | Detection, Monitoring & Incident Response | ZT-004.1 Detection, Monitoring & Incident Response | ✅ Completed |
-| **v0.6.0** | Enterprise Data Protection | ZT-005 Enterprise Data Protection | ✅ Completed |
+| **v0.6.0** | Enterprise Data Protection & Cryptography | ZT-005 Enterprise Data Protection & Cryptography | ✅ Completed |
 | **v0.7.0** | Enterprise Secrets Management & Workload Protection | ZT-006 Enterprise Secrets Management<br>ZT-007 Enterprise Workload Protection | ✅ Completed |
-| **v0.8.0** | Enterprise Security Information & Event Management (SIEM) | ZT-008 Enterprise SIEM | ✅ Completed |
-| **v0.9.0** | Enterprise Web Application Firewall (AWS WAF) | ZT-009 Enterprise Web Application Firewall (AWS WAF) | 🚧 In Progress |
-| **v0.10.0** | Enterprise API Protection | ZT-010 Enterprise API Protection | 📋 Planned |
-| **v0.11.0** | Container & Kubernetes Security | ZT-011 Container & Kubernetes Security | 📋 Planned |
-| **v0.12.0** | Software Supply Chain Security | ZT-012 Software Supply Chain Security | 📋 Planned |
-| **v0.13.0** | Security Automation & Orchestration | Future Stories | 📋 Planned |
-| **v0.14.0** | Governance, Risk & Compliance (GRC) | Future Stories | 📋 Planned |
-| **v0.15.0** | Multi-Sector Reference Implementations | Future Stories | 📋 Planned |
+| **v0.8.0** | Enterprise Vulnerability Management | ZT-008 Enterprise Vulnerability Management | ✅ Completed |
+| **v0.9.0** | Enterprise Security Information & Event Management (SIEM) | ZT-009 Enterprise SIEM | ✅ Completed |
+| **v0.10.0** | Enterprise Web Application Firewall (AWS WAF) | ZT-010 Enterprise Web Application Firewall (AWS WAF) | 🚧 In Progress |
+| **v0.11.0** | Enterprise API Protection | ZT-011 Enterprise API Protection | 🚧 In Progress |
+| **v0.12.0** | Container & Kubernetes Security | ZT-012 Container & Kubernetes Security | 🚧 In Progress |
+| **v0.13.0** | Software Supply Chain Security | ZT-013 Software Supply Chain Security 🚧 In Progress |
+| **v0.14.0** | Security Automation & Orchestration | Future Stories | 📋 Planned |
+| **v0.15.0** | Governance, Risk & Compliance (GRC) | Future Stories | 📋 Planned |
+| **v0.16.0** | Multi-Sector Reference Implementations | Future Stories | 📋 Planned |
 | **v1.0.0** | Production Release | Complete Zero Trust Reference Architecture | 🚀 Target Release |
 
 ---
