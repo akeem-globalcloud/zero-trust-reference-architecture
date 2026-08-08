@@ -1,8 +1,10 @@
 # ADR-002: Adopt Multi-Account Network Segmentation
 
-- **Status:** Completed
+- **Status:** Accepted
 
 - **Story:** ZT-003 – Enterprise Network & Connectivity Architecture
+
+- **Epic:** Zero-Trust Reference Architecture
 
 ---
 

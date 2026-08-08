@@ -2,7 +2,9 @@
 
 ## Status
 
-Completed
+Accepted
+
+**Epic:** Zero-Trust Reference Architecture
 
 ---
 

@@ -1,8 +1,10 @@
 # ADR-001: Adopt Zero Trust Architecture
 
-- **Status:** Completed
+- **Status:** Accepted
 
 - **Story:** ZT-002 – Enterprise Zero Trust Architecture Identity & Access Management
+
+- **Epic:** Zero-Trust Reference Architecture
 
 ---
 

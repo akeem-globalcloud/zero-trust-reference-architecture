@@ -1,17 +1,27 @@
 skip-check:
-  - CKV_AWS_111   # CloudWatch Logs CreateLogGroup requires "*"
-  - CKV_AWS_356   # AWS limitation for CreateLogGroup
-  - CKV_AWS_130   # Public subnets intentionally assign public IPs
-  - CKV2_AWS_5    # Security Group is a reusable module; attached by consumers
-  - CKV2_AWS_1    # NACL attachment evaluated at deployment
-  - CKV2_AWS_19   # NAT Gateway EIP attachment
-  - CKV_AWS_144   # Cross-region replication intentionally omitted
-  - CKV2_AWS_62   # S3 event notifications not required in this reference architecture
-  - CKV_AWS_109   # AWS KMS default root policy is required to enable IAM permissions for key administration.
-  - CKV_AWS_304   # Rotation interval is configurable by module consumers and validated through module input constraints to be no greater than 90 days.
-  - CKV_AWS_79    # IMDSv2 is enforced through the module metadata configuration.
-  - CKV_AWS_126   # Detailed monitoring is configurable and enabled through module inputs.
-  - CKV_AWS_109   # KMS key policy requires administrative permissions for the account owner.
-  - CKV_AWS_111   #KMS key policy intentionally grants required key management actions.
-  - CKV_AWS_356   #KMS key policies use Resource "*" because the policy is attached to a specific KMS key.
+  # CloudWatch
+  - CKV_AWS_111   # CloudWatch Log Groups require write permissions to create and manage log streams.
+  - CKV_AWS_356   # CloudWatch Logs APIs require Resource "*" for certain log management actions.
+
+  # Networking
+  - CKV_AWS_130   # Public subnets intentionally assign public IP addresses for internet-facing resources.
+  - CKV2_AWS_5    # Security Group is implemented as a reusable module; resource attachments are managed by consuming modules.
+  - CKV2_AWS_1    # Network ACL associations are evaluated and attached during deployment.
+  - CKV2_AWS_19   # Elastic IP association with the NAT Gateway is required for outbound internet connectivity.
+
+  # Amazon S3
+  - CKV_AWS_144   # Cross-Region Replication is intentionally omitted from this reference architecture.
+  - CKV2_AWS_62   # S3 event notifications are not required for this implementation.
+
+  # Amazon EC2
+  - CKV_AWS_79    # IMDSv2 enforcement is implemented through EC2 instance metadata configuration.
+  - CKV_AWS_126   # Detailed monitoring is configurable and enabled through module input variables.
+
+  # AWS KMS
+  - CKV_AWS_109   # AWS KMS key policy grants administrative permissions only to the owning AWS account, following AWS-recommended key policy design.
+  - CKV_AWS_111   # AWS KMS key policy intentionally permits required key management operations for authorized account administrators.
+  - CKV_AWS_356   # AWS KMS key policies require Resource "*" because the policy is attached directly to the customer-managed KMS key.
+
+  # General
+  - CKV_AWS_304   # Rotation interval is configurable through module inputs and validated to comply with organizational policy.
   

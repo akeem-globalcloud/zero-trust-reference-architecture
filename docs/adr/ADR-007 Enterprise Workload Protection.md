@@ -1,8 +1,10 @@
 # ADR-007: Enterprise Workload Protection
 
-- **Status:** Completed
+- **Status:** Accepted
 
 - **Story:** ZT-007 Enterprise Workload Protection
+
+- **Epic:** Zero-Trust Reference Architecture
 
 ---
 
