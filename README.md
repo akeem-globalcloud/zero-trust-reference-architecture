@@ -167,6 +167,7 @@ The reference architecture is designed for organizations operating in:
 - Enterprise API Protection
 - Container & Kubernetes Security
 - Software Supply Chain Security
+- Enterprise AI Security Operations Assistant
 - Security Automation & Orchestration
 - Governance, Risk & Compliance (GRC)
 - Multi-Sector Reference Implementations
