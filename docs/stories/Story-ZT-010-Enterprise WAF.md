@@ -132,7 +132,7 @@ Expected resources should include resources associated with:
 ## AWS Console
 Confirm the following resources exist.
 
-# AWS WAF
+## AWS WAF
 - Web ACL is deployed.
 - Web ACL is associated with the intended protected resource where applicable.
 - WAF rules are present.
@@ -140,20 +140,20 @@ Confirm the following resources exist.
 - Rate-based controls are configured.
 - IP-based controls are configured where applicable.
 
-# CloudWatch Logs
+## CloudWatch Logs
 - WAF log group exists.
 - WAF logging is enabled.
 - Log retention is configured.
 - WAF log events are being delivered.
 
-# AWS KMS
+## AWS KMS
 - Customer-managed KMS key exists.
 - Key rotation is enabled.
 - KMS alias is configured.
 - Key policy is attached.
 - WAF logging uses the customer-managed key.
 
-# Security Controls
+## Security Controls
 The deployment implements the following enterprise security controls.
 Application Security
 - AWS WAFv2 application-layer protection.
@@ -163,20 +163,21 @@ Application Security
 - Explicit WAF rule actions.
 - Continuous inspection of application traffic.
 
-# Logging and Monitoring
+## Logging and Monitoring
 - WAF logging enabled.
 - CloudWatch Log Group configured for WAF events.
 - Defined log retention period.
 - Centralized security-event visibility.
 - Logs available for security investigation and operational monitoring.
-Encryption
+
+## Encryption
 - Customer-managed AWS KMS key.
 - Automatic KMS key rotation.
 - WAF logs encrypted at rest.
 - Dedicated KMS alias.
 - Restrictive KMS key policy.
 
-# Identity and Access Management
+## Identity and Access Management
 - Least-privilege service permissions.
 - Service-specific principals.
 - Restrictive CloudWatch Logs resource policy.
@@ -184,7 +185,7 @@ Encryption
 - No hard-coded credentials.
 - Explicit service conditions.
 
-# Zero Trust
+## Zero Trust
 - Application traffic is inspected before reaching protected workloads.
 - Access decisions are based on defined WAF security policies.
 - Malicious and excessive traffic can be blocked automatically.
