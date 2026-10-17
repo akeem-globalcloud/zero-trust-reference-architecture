@@ -68,37 +68,6 @@ This solution delivers an automated and reusable web application security capabi
 
 ---
 
----
-
-# Deployment Architecture
-
-```text
-                    Internet / Client Traffic
-                              │
-                              ▼
-                     AWS WAFv2 Web ACL
-                              │
-              ┌───────────────┼────────────────┐
-              │               │                │
-              ▼               ▼                ▼
-        Managed Rules    Rate-Based Rules   IP Controls
-              │               │                │
-              └───────────────┼────────────────┘
-                              │
-                              ▼
-                    Protected Application
-                              │
-                              │
-                         WAF Logging
-                              │
-                              ▼
-                  Amazon CloudWatch Logs
-                              │
-                              ▼
-                  AWS KMS Customer Key
-
----
-
 ## Deployment Overview
 
 This deployment demonstrates how to provision the Enterprise Web Application Firewall solution within the Zero Trust Reference Architecture using the reusable Terraform WAF module.
@@ -289,3 +258,32 @@ Future implementations may extend this deployment by integrating:
 - Incident response automation
 - ServiceNow integration
 - Jira integration
+
+---
+
+# Deployment Architecture
+
+```text
+                    Internet / Client Traffic
+                              │
+                              ▼
+                     AWS WAFv2 Web ACL
+                              │
+              ┌───────────────┼────────────────┐
+              │               │                │
+              ▼               ▼                ▼
+        Managed Rules    Rate-Based Rules   IP Controls
+              │               │                │
+              └───────────────┼────────────────┘
+                              │
+                              ▼
+                    Protected Application
+                              │
+                              │
+                         WAF Logging
+                              │
+                              ▼
+                  Amazon CloudWatch Logs
+                              │
+                              ▼
+                  AWS KMS Customer Key
