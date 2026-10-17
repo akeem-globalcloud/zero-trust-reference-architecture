@@ -10,7 +10,7 @@ High
 
 ## User Story
 
-**As a Cloud Security Engineer,** I want to implement enterprise detection, monitoring, and incident response capabilities using AWS native security services and Terraform, 
+**As a Cloud Security and Infrastructure Engineer,** I want to implement enterprise detection, monitoring, and incident response capabilities using AWS native security services and Terraform, 
 So that security events are continuously monitored, threats are detected in real time, alerts are generated automatically, and incident response activities are initiated quickly to protect enterprise cloud workloads and support Zero Trust security principles.
 
 ---

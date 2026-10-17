@@ -14,7 +14,7 @@ High
 
 ## User Story
 
-**As a Cloud Security Engineer,** I want to implement an Enterprise Security Information and Event Management (SIEM) platform using AWS native services and Terraform so that security findings, events, and telemetry are centrally collected, correlated, monitored, and securely distributed to improve enterprise threat detection, incident response, operational visibility, and compliance.
+**As a Cloud Security and Infrastructure Engineer,** I want to implement an Enterprise Security Information and Event Management (SIEM) platform using AWS native services and Terraform so that security findings, events, and telemetry are centrally collected, correlated, monitored, and securely distributed to improve enterprise threat detection, incident response, operational visibility, and compliance.
 
 ---
 
