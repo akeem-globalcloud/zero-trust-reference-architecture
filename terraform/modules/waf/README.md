@@ -1,6 +1,3 @@
-cd /mnt/c/Users/ogund/github/zero-trust-reference-architecture/terraform
-
-cat > modules/waf/README.md <<'EOF'
 # Enterprise Web Application Firewall Module
 
 ## Overview
@@ -29,6 +26,22 @@ All resources are provisioned using Terraform and follow enterprise security bes
 - Supports enterprise tagging standards.
 - Designed for reusable enterprise deployments.
 - Compatible with Terraform 1.13 or later.
+
+---
+
+## Module Structure
+
+modules/
+└── waf/
+    ├── versions.tf
+    ├── provider.tf
+    ├── variables.tf
+    ├── locals.tf
+    ├── main.tf
+    ├── kms.tf
+    ├── policy.tf
+    ├── outputs.tf
+    └── README.md
 
 ---
 
@@ -64,19 +77,3 @@ All resources are provisioned using Terraform and follow enterprise security bes
                        │
                        ▼
               Encrypted Log Data
-
----
-
-## Module Structure
-
-modules/
-└── waf/
-    ├── versions.tf
-    ├── provider.tf
-    ├── variables.tf
-    ├── locals.tf
-    ├── main.tf
-    ├── kms.tf
-    ├── policy.tf
-    ├── outputs.tf
-    └── README.md

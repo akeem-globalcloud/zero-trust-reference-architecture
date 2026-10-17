@@ -12,40 +12,7 @@ The deployment is intended to serve as a production-ready reference implementati
 
 ---
 
-# Architecture
-
-```text
-                         Internet
-                            │
-                            ▼
-                    Enterprise Web
-                      Application
-                            │
-                            ▼
-                     AWS WAFv2
-                      Web ACL
-                            │
-             ┌──────────────┼──────────────┐
-             │              │              │
-             ▼              ▼              ▼
-       Managed Rules    Rate Limiting   IP Controls
-             │              │              │
-             └──────────────┼──────────────┘
-                            │
-                            ▼
-                   Protected Application
-                            │
-                            │
-                     WAF Logging
-                            │
-                            ▼
-                  Amazon CloudWatch Logs
-                            │
-                            ▼
-                 AWS KMS Customer Managed
-                         Key (CMK)
-
-Deployment Structure
+## Deployment Structure
 deployment-examples/
 └── waf/
     ├── provider.tf
@@ -93,35 +60,35 @@ Before deploying the solution, ensure the following requirements are met.
 
 
 
-Initialize Terraform.
+## Initialize Terraform.
 terraform init
 
-Format the Terraform configuration.
+## Format the Terraform configuration.
 terraform fmt -recursive
 
-Validate the configuration.
+## Validate the configuration.
 terraform validate
 
-Review the execution plan.
+## Review the execution plan.
 terraform plan
 
-Deploy the infrastructure.
+## Deploy the infrastructure.
 terraform apply
 
 Review the Terraform plan carefully before confirming the deployment.
 Resources Created
 The deployment provisions the following AWS resources.
 Resource	Description
-AWS WAFv2 Web ACL	Provides centralized web application protection
-AWS WAF Managed Rule Groups	Protects against common and known web-based threats
-AWS WAF Rate-Based Rule	Helps mitigate excessive request traffic
-AWS WAF IP Set Rules	Provides configurable IP allow and block controls
-AWS KMS Customer Managed Key	Encrypts WAF logging data
-AWS KMS Alias	Provides a friendly identifier for the encryption key
-CloudWatch Log Group	Stores AWS WAF logs
-CloudWatch Logs Resource Policy	Allows AWS services to deliver WAF logs
-WAF Logging Configuration	Enables centralized WAF logging
-KMS Key Policy	Controls access to the customer-managed encryption key
+- AWS WAFv2 Web ACL |	Provides centralized web application protection
+- AWS WAF Managed Rule Groups |	Protects against common and known web-based threats
+- AWS WAF Rate-Based Rule |	Helps mitigate excessive request traffic
+- AWS WAF IP Set Rules | Provides configurable IP allow and block controls
+- AWS KMS Customer Managed Key |	Encrypts WAF logging data
+- AWS KMS Alias |	Provides a friendly identifier for the encryption key
+- CloudWatch Log Group |	Stores AWS WAF logs
+- CloudWatch Logs Resource Policy |	Allows AWS services to deliver WAF logs
+- WAF Logging Configuration |	Enables centralized WAF logging
+- KMS Key Policy |	Controls access to the customer-managed encryption key
 
 
 # Verification
@@ -131,18 +98,19 @@ Check the Terraform state.
 terraform state list
 
 # Expected resources should include resources similar to:
-aws_wafv2_web_acl.this
-aws_wafv2_ip_set.blocked
-aws_wafv2_ip_set.allowed
-aws_kms_key.waf_logs
-aws_kms_alias.waf_logs
-aws_kms_key_policy.waf_logs
-aws_cloudwatch_log_group.waf
-aws_cloudwatch_log_resource_policy.waf
-aws_wafv2_web_acl_logging_configuration.this
+- aws_wafv2_web_acl.this
+- aws_wafv2_ip_set.blocked
+- aws_wafv2_ip_set.allowed
+- aws_kms_key.waf_logs
+- aws_kms_alias.waf_logs
+- aws_kms_key_policy.waf_logs
+- aws_cloudwatch_log_group.waf
+- aws_cloudwatch_log_resource_policy.waf
+- aws_wafv2_web_acl_logging_configuration.this
 
 The exact resources shown depend on the enabled configuration options.
-AWS Console
+
+## AWS Console
 Confirm the following resources exist in the configured AWS Region.
 AWS WAF
 - Web ACL is deployed
@@ -152,14 +120,14 @@ AWS WAF
 - IP allow and block controls are configured
 - Default action is configured correctly
 
-AWS KMS
+## AWS KMS
 - Customer-managed KMS key exists
 - Key rotation is enabled
 - KMS alias is configured
 - Key policy is attached
 - Key is associated with WAF logging
 
-Amazon CloudWatch
+## Amazon CloudWatch
 - WAF log group exists
 - Log retention is configured for at least one year
 - Log group encryption is enabled using the customer-managed KMS key
@@ -167,32 +135,36 @@ Amazon CloudWatch
 Security Controls
 
 The deployment implements the following enterprise security controls.
-Web Application Protection
+## Web Application Protection
 - AWS WAFv2 Web ACL
 - AWS managed rule groups
 - Rate-based request protection
 - IP-based access controls
 - Configurable default action
 - Centralized WAF policy enforcement
-Encryption
+
+## Encryption
 - Customer-managed AWS KMS key
 - Automatic KMS key rotation
 - CloudWatch WAF logs encrypted at rest
 - Dedicated KMS alias
 - Restricted KMS key usage through key policy conditions
-Identity and Access Management
+
+## Identity and Access Management
 - Service-specific IAM permissions
 - Restricted AWS service principals
 - Least-privilege logging permissions
 - Controlled KMS key access
 - No unrestricted human access to logging resources
-Logging and Monitoring
+
+## Logging and Monitoring
 - Centralized AWS WAF logging
 - CloudWatch Logs integration
 - Long-term log retention
 - Encrypted security logs
 - Resource-level logging controls
-Zero Trust
+
+## Zero Trust
 - Continuous inspection of web traffic
 - Explicit security policy enforcement
 - Layered request controls
@@ -201,54 +173,8 @@ Zero Trust
 - Encryption of security telemetry
 - Infrastructure as Code
 - Repeatable and version-controlled deployments
-Validation
-The deployment was validated using the following security and infrastructure tools.
-Tool	Result
-terraform fmt	Passed
-terraform validate	Passed
-terraform plan	Passed
-Checkov	Passed / Documented Exceptions
-Trivy Configuration Scan	Passed
 
-
-Checkov Results
-The WAF module was scanned using Checkov.
-The validation confirmed that the WAF configuration passes the applicable WAF, logging, IAM, and CloudWatch security controls.
-The final documented Checkov exceptions are associated with the AWS KMS customer-managed key policy.
-Check	Status
-CKV_AWS_109	Expected
-CKV_AWS_111	Expected
-CKV_AWS_356	Expected
-CKV2_AWS_64	Resolved
-
-
-The CKV_AWS_109, CKV_AWS_111, and CKV_AWS_356 findings are associated with KMS key administration policies and AWS-required KMS policy behavior.
-The KMS policy is restricted to the appropriate account principal and AWS service principal, with service-specific conditions applied to CloudWatch Logs usage.
-These findings are documented as expected exceptions for the customer-managed KMS implementation rather than exploitable application vulnerabilities.
-Trivy Configuration Scan
-The WAF Terraform module was also scanned using Trivy configuration scanning.
-Run the scan from the repository root:
-trivy config terraform/modules/waf
-
-The scan should identify the Terraform configuration files and evaluate them for infrastructure misconfigurations.
-A successful scan indicates that the WAF module does not contain Trivy-detected configuration misconfigurations at the time of validation.
-Troubleshooting
-Issue	Resolution
-Terraform initialization fails	Verify AWS credentials, network connectivity, Terraform version, and provider configuration
-Terraform validation fails	Review the reported Terraform configuration error and correct the referenced file
-Terraform plan fails	Review resource dependencies, variables, provider configuration, and AWS permissions
-WAF Web ACL is not created	Verify AWS credentials and permissions to create AWS WAFv2 resources
-WAF logging is not enabled	Confirm enable_logging = true and verify CloudWatch Logs configuration
-CloudWatch logging fails	Verify the WAF logging configuration and CloudWatch Logs resource policy
-KMS access denied	Review the KMS key policy and CloudWatch Logs service permissions
-Checkov reports CKV_AWS_338	Set log_retention_days to at least 365 days
-Checkov reports CKV_AWS_158	Ensure the CloudWatch Log Group uses the WAF customer-managed KMS key
-Checkov reports CKV2_AWS_64	Ensure an explicit aws_kms_key_policy is attached to the customer-managed KMS key
-Trivy fails with mount namespace error	Run Trivy from the repository root or use the Terraform module path directly
-WAF rules are not triggering	Verify Web ACL association, rule priority, rule configuration, and sampled requests
-
-
-Operational Considerations
+## Operational Considerations
 The WAF deployment should be integrated with the organization's broader security monitoring and incident response processes.
 Security teams should periodically review:
 - WAF blocked requests
@@ -266,7 +192,7 @@ Managed rule groups should be reviewed periodically to ensure that they remain a
 Enterprise Deployment Considerations
 For production environments, the WAF module can be extended to support centralized enterprise deployment across multiple applications and AWS accounts.
 
-Recommended enterprise practices include:
+**Recommended enterprise practices include:**
 - Centralized WAF policy management
 - AWS Organizations integration
 - Standardized Web ACL configurations
@@ -283,7 +209,7 @@ Zero Trust Alignment
 The WAF deployment supports the Zero Trust Reference Architecture by enforcing security controls at the application access layer.
 The implementation follows the principle of continuously evaluating and controlling web traffic rather than relying solely on network perimeter security.
 
-Key Zero Trust principles implemented include:
+**Key Zero Trust principles implemented include:**
 - Explicit traffic inspection
 - Policy-based access control
 - Continuous monitoring
@@ -294,7 +220,7 @@ Key Zero Trust principles implemented include:
 - Infrastructure as Code
 - Repeatable security enforcement
 
-Cleanup
+## Cleanup
 To remove all deployed resources, run:
 terraform destroy
 
@@ -303,8 +229,8 @@ If WAF resources are associated with an application or other AWS service outside
 terraform state list
 
 Use the state output to confirm which resources are managed by this deployment before performing cleanup.
-Conclusion
+
+## Conclusion
 The Enterprise Web Application Firewall deployment provides a reusable and security-focused AWS WAFv2 implementation for the Zero Trust Reference Architecture.
 The deployment combines AWS WAFv2 protection, managed security rules, rate-based controls, IP-based controls, encrypted CloudWatch logging, and customer-managed KMS encryption into a repeatable Terraform implementation.
 This provides an enterprise-ready foundation for protecting web applications while maintaining centralized visibility, strong encryption, least-privilege access, and consistent Infrastructure as Code practices.
-```
