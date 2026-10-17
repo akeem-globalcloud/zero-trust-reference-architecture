@@ -20,7 +20,7 @@ module "waf" {
   blocked_ip_addresses = var.blocked_ip_addresses
   allowed_ip_addresses = var.allowed_ip_addresses
 
-  enable_logging    = var.enable_logging
+  enable_logging     = var.enable_logging
   log_retention_days = var.log_retention_days
 
   tags = var.tags
