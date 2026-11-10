@@ -1,0 +1,47 @@
+# AWS Configuration
+aws_region   = "us-east-1"
+cluster_name = "REPLACE-WITH-EXISTING-EKS-CLUSTER"
+
+# Kubernetes Workload Configuration
+workload_namespace = "secure-workloads"
+
+# Enterprise Tags
+tags = {
+  Environment = "Development"
+  Project     = "Zero-Trust-Reference-Architecture"
+  Owner       = "Cloud-Security"
+  ManagedBy   = "Terraform"
+  Story       = "ZT-011"
+}
+
+# Amazon ECR Image Scanning
+# This changes the account-level ECR registry scanning configuration.
+enable_ecr_enhanced_scanning = false
+ecr_repository_filter        = "*"
+ecr_scan_frequency           = "CONTINUOUS_SCAN"
+
+# GuardDuty
+# Supply an existing detector ID before enabling either feature.
+enable_guardduty_eks_audit_logs     = false
+enable_guardduty_runtime_monitoring = false
+guardduty_detector_id               = ""
+
+# Kyverno Admission Control
+enable_kyverno                    = true
+kyverno_namespace                 = "kyverno"
+kyverno_chart_version             = "3.5.2"
+kyverno_policies_chart_version    = "3.5.2"
+kyverno_policy_profile            = "restricted"
+kyverno_validation_failure_action = "Audit"
+
+# Kubernetes Pod Security Admission
+enable_pod_security_admission = true
+pod_security_enforce_level    = "baseline"
+
+# Kubernetes Network Policies
+enable_network_policies = true
+
+# Optional IAM Roles for Service Accounts
+create_workload_iam_role = false
+oidc_provider_arn        = ""
+workload_service_account = "container-workload"
