@@ -10,7 +10,7 @@
 | Title                  | Enterprise Software Supply Chain Security                                     |
 | Epic                   | Zero-Trust Reference Architecture                                             |
 | Priority               | High                                                                          |
-| Status                 | Planned                                                                       |
+| Status                 | In Progress                                                                   |
 | Capability             | Software Supply Chain Security                                                |
 | Infrastructure as Code | Terraform                                                                     |
 | Cloud Platform         | Amazon Web Services                                                           |
